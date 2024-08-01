@@ -22,22 +22,24 @@
 
 .content {
   position: absolute;
-  bottom: 15%; /* Moved up from bottom */
+  bottom: 0; /* Changed from 15% to 0 */
   left: 0;
   right: 0;
   padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 60%, transparent 100%);
   color: white;
   z-index: 1;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  flex-direction: column; /* Changed to column layout */
+  justify-content: flex-end;
+  min-height: 40%; /* Ensure the gradient covers a good portion of the screen */
 }
 
 .mainInfo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 10px; /* Add some space between main info and price */
 }
 
 .title {
@@ -77,6 +79,7 @@
 .price {
   font-size: 20px;
   font-weight: bold;
+  align-self: flex-end; /* Align price to the right */
 }
 
 .swipeIndicator {

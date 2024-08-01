@@ -24,16 +24,16 @@ function ActivityCard({ activity, onKnowMore }) {
         <video src={activity.videoUrl} loop autoPlay muted playsInline className={styles.video} />
       </div>
       <div className={styles.content}>
-        <div className={styles.mainInfo}>
-          <h2 className={styles.title}>{activity.title}</h2>
-          <p className={styles.location}>{activity.location}</p>
-          <div className={styles.rating}>{renderStars(activity.rating)}</div>
-          <button onClick={onKnowMore} className={styles.button}>Learn More</button>
-        </div>
-        <div className={styles.price}>
-          <p>From {activity.price} euros</p>
-        </div>
-      </div>
+  <div className={styles.mainInfo}>
+    <h2 className={styles.title}>{activity.title}</h2>
+    <p className={styles.location}>{activity.location}</p>
+    <div className={styles.rating}>{renderStars(activity.rating)}</div>
+    <button onClick={onKnowMore} className={styles.button}>Learn More</button>
+  </div>
+  <div className={styles.price}>
+    <p>From {activity.price} euros</p>
+  </div>
+</div>
       <div className={styles.swipeIndicator}>
         <span className={styles.arrow}>←</span>
         <span>Swipe</span>
