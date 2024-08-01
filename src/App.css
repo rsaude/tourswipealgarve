@@ -1,0 +1,55 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.title {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.info {
+  margin: 10px 0;
+}
+
+.datePicker {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.bookButton, .closeButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.bookButton {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.closeButton {
+  background-color: #f44336;
+  color: white;
+}
