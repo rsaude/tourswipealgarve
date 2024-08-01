@@ -22,7 +22,7 @@
 
 .content {
   position: absolute;
-  bottom: 0;
+  bottom: 15%; /* Moved up from bottom */
   left: 0;
   right: 0;
   padding: 20px;
@@ -30,14 +30,33 @@
   color: white;
   z-index: 1;
   display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.mainInfo {
+  display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  min-height: 20%; /* Ensure minimum height for content */
+  align-items: flex-start;
 }
 
 .title {
   margin: 0 0 10px 0;
-  font-size: 24px;
+  font-size: 28px;
+}
+
+.location {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+}
+
+.rating {
+  margin-bottom: 10px;
+}
+
+.star {
+  color: gold;
+  font-size: 20px;
 }
 
 .button {
@@ -49,12 +68,15 @@
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s;
-  align-self: flex-start; /* Align button to the left */
-  margin-bottom: 10px; /* Add some space below the button */
 }
 
 .button:hover {
   background-color: #ff3333;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .swipeIndicator {

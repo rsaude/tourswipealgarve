@@ -12,6 +12,7 @@ const mockActivities = [
     location: 'Miami Beach, FL',
     description: 'Experience the beauty of Miami Beach at sunset while kayaking.',
     price: 50,
+    rating: 4.5,
     fareHarborItemId: '331340',
   },
   {
@@ -21,7 +22,8 @@ const mockActivities = [
     location: 'Rocky Mountains, CO',
     description: 'Explore the breathtaking views of the Rocky Mountains on this guided hike.',
     price: 75,
-    fareHarborItemId: '331341', // Replace with actual ID
+    rating: 4.8,
+    fareHarborItemId: '331341',
   },
   {
     id: 3,
@@ -30,7 +32,8 @@ const mockActivities = [
     location: 'New York City, NY',
     description: 'Taste the best of NYC in this guided culinary adventure.',
     price: 100,
-    fareHarborItemId: '331342', // Replace with actual ID
+    rating: 4.2,
+    fareHarborItemId: '331342',
   },
 ];
 
