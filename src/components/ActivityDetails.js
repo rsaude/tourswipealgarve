@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './ActivityDetails.module.css';
+import { FaClock, FaCalendarAlt, FaMapMarkerAlt, FaInfoCircle, FaList, FaCheckCircle, FaTimesCircle, FaStar, FaExclamationTriangle } from 'react-icons/fa';
 
 function ActivityDetails({ activity, onClose }) {
   const [expandedSection, setExpandedSection] = useState('overview');
@@ -8,10 +9,10 @@ function ActivityDetails({ activity, onClose }) {
     setExpandedSection(expandedSection === section ? null : section);
   };
 
-  const renderSection = (title, content) => (
+  const renderSection = (title, content, icon) => (
     <div className={styles.section}>
       <h3 onClick={() => toggleSection(title)} className={styles.sectionTitle}>
-        {title} {expandedSection === title ? '▲' : '▼'}
+        {icon} {title} {expandedSection === title ? '▲' : '▼'}
       </h3>
       {expandedSection === title && <div className={styles.sectionContent}>{content}</div>}
     </div>
@@ -22,34 +23,55 @@ function ActivityDetails({ activity, onClose }) {
       <div className={styles.modal}>
         <button onClick={onClose} className={styles.closeButton}>×</button>
         <h2 className={styles.title}>{activity.title}</h2>
+        <div className={styles.headerInfo}>
+          <p className={styles.price}>From ${activity.price}</p>
+          <p className={styles.location}>{activity.location}</p>
+        </div>
+        <button className={styles.bookNowButton}>Book Now</button>
         
-        {renderSection('Overview', (
-          <>
-            <p>Duration: {activity.duration}</p>
-            <p>Cancellations: {activity.cancellationPolicy}</p>
-            <p>Meeting point: {activity.meetingPoint}</p>
-          </>
-        ))}
+        <div className={styles.overview}>
+          <div className={styles.overviewItem}>
+            <FaClock className={styles.icon} />
+            <div>
+              <h4>Duration</h4>
+              <p>{activity.duration}</p>
+            </div>
+          </div>
+          <div className={styles.overviewItem}>
+            <FaCalendarAlt className={styles.icon} />
+            <div>
+              <h4>Cancellations</h4>
+              <p>{activity.cancellationPolicy}</p>
+            </div>
+          </div>
+          <div className={styles.overviewItem}>
+            <FaMapMarkerAlt className={styles.icon} />
+            <div>
+              <h4>Meeting point</h4>
+              <p>{activity.meetingPoint}</p>
+            </div>
+          </div>
+        </div>
         
-        {renderSection('Activity details', <p>{activity.details}</p>)}
+        <p className={styles.description}>{activity.description}</p>
         
         {renderSection("What's included", (
-          <ul>
-            {activity.included.map((item, index) => <li key={index}>{item}</li>)}
+          <ul className={styles.includesList}>
+            {activity.included.map((item, index) => <li key={index}><FaCheckCircle className={styles.includeIcon} /> {item}</li>)}
           </ul>
-        ))}
+        ), <FaList />)}
         
         {renderSection("What's not included", (
-          <ul>
-            {activity.notIncluded.map((item, index) => <li key={index}>{item}</li>)}
+          <ul className={styles.includesList}>
+            {activity.notIncluded.map((item, index) => <li key={index}><FaTimesCircle className={styles.excludeIcon} /> {item}</li>)}
           </ul>
-        ))}
+        ), <FaList />)}
         
         {renderSection('Highlights', (
-          <ul>
-            {activity.highlights.map((item, index) => <li key={index}>{item}</li>)}
+          <ul className={styles.highlightsList}>
+            {activity.highlights.map((item, index) => <li key={index}><FaStar className={styles.highlightIcon} /> {item}</li>)}
           </ul>
-        ))}
+        ), <FaStar />)}
         
         {renderSection('Additional information', (
           <>
@@ -68,9 +90,9 @@ function ActivityDetails({ activity, onClose }) {
               {activity.restrictions.map((item, index) => <li key={index}>{item}</li>)}
             </ul>
           </>
-        ))}
+        ), <FaInfoCircle />)}
         
-        {renderSection('Cancellations', <p>{activity.cancellationDetails}</p>)}
+        {renderSection('Cancellations', <p>{activity.cancellationDetails}</p>, <FaExclamationTriangle />)}
       </div>
     </div>
   );
