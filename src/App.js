@@ -164,6 +164,15 @@ function App() {
     return <div className={styles.loading}>Loading...</div>;
   }
 
+  if (showDetails) {
+    return (
+      <ActivityDetails
+        activity={activities[currentIndex]}
+        onClose={() => setShowDetails(false)}
+      />
+    );
+  }
+
   return (
     <div className={styles.app}>
       <div {...handlers} className={styles.activityContainer}>
@@ -172,12 +181,6 @@ function App() {
           onKnowMore={() => setShowDetails(true)}
         />
       </div>
-      {showDetails && (
-        <ActivityDetails
-          activity={activities[currentIndex]}
-          onClose={() => setShowDetails(false)}
-        />
-      )}
     </div>
   );
 }

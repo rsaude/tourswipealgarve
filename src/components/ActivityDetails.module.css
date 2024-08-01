@@ -1,43 +1,42 @@
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal {
+.detailsPage {
   background-color: white;
-  border-radius: 12px;
-  padding: 30px;
-  width: 90%;
-  max-width: 600px;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  padding-bottom: 50px;
 }
 
-.closeButton {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+.header {
+  background-color: #f0f0f0;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.backButton {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 16px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
   color: #333;
+  margin-bottom: 10px;
+}
+
+.backButton svg {
+  margin-right: 5px;
 }
 
 .title {
   font-size: 28px;
-  margin-bottom: 10px;
+  margin: 0;
   color: #333;
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .headerInfo {
@@ -67,6 +66,7 @@
   cursor: pointer;
   transition: background-color 0.3s;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .bookNowButton:hover {
@@ -102,4 +102,52 @@
   color: #333;
 }
 
-.overvi
+.overviewItem p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.sectionTitle svg {
+  margin-right: 10px;
+}
+
+.includesList, .highlightsList {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.includesList li, .highlightsList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.includeIcon, .highlightIcon {
+  color: #4CAF50;
+  margin-right: 10px;
+}
+
+.excludeIcon {
+  color: #f44336;
+  margin-right: 10px;
+}
