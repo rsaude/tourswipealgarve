@@ -8,7 +8,7 @@ const mockActivities = [
   {
     id: 1,
     title: 'Sunset Kayaking',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-group-of-friends-partying-on-a-boat-4640-large.mp4',
+    videoUrl: 'https://videos.pexels.com/video-files/4611883/4611883-uhd_2560_1440_30fps.mp44',
     location: 'Miami Beach, FL',
     description: 'Experience the beauty of Miami Beach at sunset while kayaking.',
     price: 50,
@@ -18,7 +18,7 @@ const mockActivities = [
   {
     id: 2,
     title: 'Mountain Hiking',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-forest-on-a-sunny-afternoon-41465-large.mp4',
+    videoUrl: 'https://https://videos.pexels.com/video-files/15749386/15749386-uhd_1440_2560_30fps.mp4',
     location: 'Rocky Mountains, CO',
     description: 'Explore the breathtaking views of the Rocky Mountains on this guided hike.',
     price: 75,
@@ -28,7 +28,7 @@ const mockActivities = [
   {
     id: 3,
     title: 'City Food Tour',
-    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-serving-restaurant-dishes-to-customers-855-large.mp4',
+    videoUrl: 'https://videos.pexels.com/video-files/7824469/7824469-uhd_1440_2560_30fps.mp4',
     location: 'New York City, NY',
     description: 'Taste the best of NYC in this guided culinary adventure.',
     price: 100,
