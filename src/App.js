@@ -51,7 +51,7 @@ const mockActivities = [
   {
     id: 2,
     title: 'Mountain Hiking',
-    videoUrl: 'https://youtu.be/7BxIGdVkqFw',
+    videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-forest-on-a-sunny-afternoon-41465-large.mp4',
     location: 'Vieques, Puerto Rico',
     description: 'Experience the magic of the brightest bioluminescent bay in the world...',
     price: 70,

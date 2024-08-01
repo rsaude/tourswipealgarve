@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import styles from './ActivityDetails.module.css';
-import { FaClock, FaCalendarAlt, FaMapMarkerAlt, FaInfoCircle, FaList, FaCheckCircle, FaTimesCircle, FaStar, FaExclamationTriangle, FaArrowLeft } from 'react-icons/fa';
+import { FaClock, FaCalendarAlt, FaMapMarkerAlt, FaInfoCircle, FaList, FaCheckCircle, FaTimesCircle, FaStar, FaExclamationTriangle, FaArrowLeft, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import FareHarborCalendar from './FareHarborCalendar';
 
 function ActivityDetails({ activity, onClose }) {
+  const [isAdditionalInfoOpen, setIsAdditionalInfoOpen] = useState(false);
+  const calendarRef = useRef(null);
+
+  const toggleAdditionalInfo = () => {
+    setIsAdditionalInfoOpen(!isAdditionalInfoOpen);
+  };
+
+  const scrollToCalendar = () => {
+    calendarRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className={styles.detailsPage}>
       <header className={styles.header}>
@@ -17,7 +29,7 @@ function ActivityDetails({ activity, onClose }) {
           <p className={styles.price}>From ${activity.price}</p>
           <p className={styles.location}>{activity.location}</p>
         </div>
-        <button className={styles.bookNowButton}>Book Now</button>
+        <button className={styles.bookNowButton} onClick={scrollToCalendar}>Book Now</button>
         
         <div className={styles.overview}>
           <div className={styles.overviewItem}>
@@ -67,27 +79,39 @@ function ActivityDetails({ activity, onClose }) {
         </section>
         
         <section className={styles.section}>
-          <h3 className={styles.sectionTitle}><FaInfoCircle /> Additional information</h3>
-          <h4>Check-in details</h4>
-          <p>{activity.checkInDetails}</p>
-          <h4>What to bring</h4>
-          <ul>
-            {activity.whatToBring.map((item, index) => <li key={index}>{item}</li>)}
-          </ul>
-          <h4>Special requirements</h4>
-          <ul>
-            {activity.specialRequirements.map((item, index) => <li key={index}>{item}</li>)}
-          </ul>
-          <h4>Restrictions</h4>
-          <ul>
-            {activity.restrictions.map((item, index) => <li key={index}>{item}</li>)}
-          </ul>
+          <h3 className={styles.sectionTitle} onClick={toggleAdditionalInfo}>
+            <FaInfoCircle /> Additional information
+            {isAdditionalInfoOpen ? <FaChevronUp className={styles.chevron} /> : <FaChevronDown className={styles.chevron} />}
+          </h3>
+          {isAdditionalInfoOpen && (
+            <div className={styles.additionalInfo}>
+              <h4>Check-in details</h4>
+              <p>{activity.checkInDetails}</p>
+              <h4>What to bring</h4>
+              <ul>
+                {activity.whatToBring.map((item, index) => <li key={index}>{item}</li>)}
+              </ul>
+              <h4>Special requirements</h4>
+              <ul>
+                {activity.specialRequirements.map((item, index) => <li key={index}>{item}</li>)}
+              </ul>
+              <h4>Restrictions</h4>
+              <ul>
+                {activity.restrictions.map((item, index) => <li key={index}>{item}</li>)}
+              </ul>
+            </div>
+          )}
         </section>
         
         <section className={styles.section}>
           <h3 className={styles.sectionTitle}><FaExclamationTriangle /> Cancellations</h3>
           <p>{activity.cancellationDetails}</p>
         </section>
+
+        <div ref={calendarRef} className={styles.calendarSection}>
+          <h3 className={styles.sectionTitle}><FaCalendarAlt /> Book Your Experience</h3>
+          <FareHarborCalendar itemId={activity.fareHarborItemId} />
+        </div>
       </div>
     </div>
   );
