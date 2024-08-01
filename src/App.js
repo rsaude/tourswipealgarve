@@ -44,16 +44,16 @@ function App() {
   }, []);
 
   const handleSwipe = useCallback((direction) => {
-    if (direction === 'up' && currentIndex < activities.length - 1) {
+    if (direction === 'left' && currentIndex < activities.length - 1) {
       setCurrentIndex(prev => prev + 1);
-    } else if (direction === 'down' && currentIndex > 0) {
+    } else if (direction === 'right' && currentIndex > 0) {
       setCurrentIndex(prev => prev - 1);
     }
   }, [currentIndex, activities.length]);
 
   const handlers = useSwipeable({
-    onSwipedUp: () => handleSwipe('up'),
-    onSwipedDown: () => handleSwipe('down'),
+    onSwipedLeft: () => handleSwipe('left'),
+    onSwipedRight: () => handleSwipe('right'),
     preventDefaultTouchmoveEvent: true,
     trackMouse: true
   });

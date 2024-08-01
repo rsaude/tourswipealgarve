@@ -11,6 +11,11 @@ function ActivityCard({ activity, onKnowMore }) {
         <h2 className={styles.title}>{activity.title}</h2>
         <button onClick={onKnowMore} className={styles.button}>Know More</button>
       </div>
+      <div className={styles.swipeIndicator}>
+        <span className={styles.arrow}>←</span>
+        <span>Swipe</span>
+        <span className={styles.arrow}>→</span>
+      </div>
     </div>
   );
 }
