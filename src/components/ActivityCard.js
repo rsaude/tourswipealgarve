@@ -26,10 +26,11 @@ function ActivityCard({ activity, onKnowMore }) {
       <div className={styles.content}>
   <div className={styles.mainInfo}>
     <h2 className={styles.title}>{activity.title}</h2>
+    <p>From {activity.price} €</p>
     <p className={styles.location}>{activity.location}</p>
     <div className={styles.rating}>{renderStars(activity.rating)}</div>
     <button onClick={onKnowMore} className={styles.button}>Learn More</button>
-    <p>From {activity.price} €</p>
+    
   </div>
 </div>
       <div className={styles.swipeIndicator}>
