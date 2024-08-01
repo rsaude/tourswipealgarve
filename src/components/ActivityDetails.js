@@ -29,6 +29,8 @@ function ActivityDetails({ activity, onClose }) {
           <p className={styles.price}>From ${activity.price}</p>
           <p className={styles.location}>{activity.location}</p>
         </div>
+        <h4 className={styles.description}>{activity.description}</h4>
+
         <button className={styles.bookNowButton} onClick={scrollToCalendar}>Book Now</button>
         
         <div className={styles.overview}>
@@ -55,7 +57,7 @@ function ActivityDetails({ activity, onClose }) {
           </div>
         </div>
         
-        <p className={styles.description}>{activity.description}</p>
+        
         
         <section className={styles.section}>
           <h3 className={styles.sectionTitle}><FaList /> What's included</h3>
