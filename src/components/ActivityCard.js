@@ -4,7 +4,9 @@ import styles from './ActivityCard.module.css';
 function ActivityCard({ activity, onKnowMore }) {
   return (
     <div className={styles.card}>
-      <video src={activity.videoUrl} loop autoPlay muted className={styles.video} />
+      <div className={styles.videoContainer}>
+        <video src={activity.videoUrl} loop autoPlay muted playsInline className={styles.video} />
+      </div>
       <div className={styles.content}>
         <h2 className={styles.title}>{activity.title}</h2>
         <button onClick={onKnowMore} className={styles.button}>Know More</button>

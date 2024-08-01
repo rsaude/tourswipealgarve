@@ -1,20 +1,19 @@
 .app {
-    height: 100vh;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .activityContainer {
-    width: 100%;
-    max-width: 500px;
-    height: 80vh;
-    background-color: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  }
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+}
+
+.activityContainer {
+  width: 100%;
+  height: 100vh; /* Changed from 80vh to 100vh */
+  max-width: 100%; /* Remove max-width restriction */
+  background-color: black; /* Changed from white to black for better video visibility */
+  overflow: hidden;
+  position: relative;
+}
   
   .loading {
     display: flex;
